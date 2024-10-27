@@ -1,22 +1,19 @@
-import { useEffect, useState } from "react";
-import {getNotes} from "./api/notes";
-import { Note as NoteModel } from "./models/note";
-import NewNote from "./components/NewNote";
-import Note from "./components/Note";
+import Quests from "./components/QuestInfo";
+import Skills from "./components/Skills";
+import StatusPanel from "./components/StatusPanel";
+import Tasks from "./components/Tasks";
 
-export default function App() {
-  const [notes, setNotes] = useState<NoteModel[]>([]);
 
-  useEffect(() => {
-    getNotes().then((notes) => setNotes(notes));
-  }, []);
-
+export default function Home() {
+  
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      {notes.map((note) => {
-        return <Note key={note._id} note={note} setNotes={setNotes} />;
-      })}
-      <NewNote setNotes={setNotes} />
-    </div>
+    <main className="flex flex-col items-center gap-10 justify-center">
+      <h1>
+        SOLO LEVELING
+      </h1>
+      <Quests />
+      <StatusPanel />
+      <Tasks />
+    </main>
   );
 }

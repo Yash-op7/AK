@@ -19,7 +19,7 @@ interface Status {
   AP: number;
 }
 
-const Skills = () => {
+const   Skills = () => {
   const status: Status = {
     _id: "66f100d2f087ab3b87cfb38d",
     updatedOn: "2024-09-23T05:46:58.394Z",
